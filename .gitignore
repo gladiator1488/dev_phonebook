@@ -1,0 +1,18 @@
+# Окружение Python и кэш
+venv/
+__pycache__/
+*.pyc
+
+# Данные локальной базы данных PostgreSQL
+pgdata/
+
+# Секреты и переменные окружения
+.env
+
+# Системные файлы ОС (на всякий случай)
+.DS_Store
+Thumbs.db
+
+# Настройки редакторов кода (VS Code, PyCharm)
+.vscode/
+.idea/

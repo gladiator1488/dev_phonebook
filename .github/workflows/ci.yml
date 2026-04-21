@@ -23,5 +23,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context .
-          push: True
+          push: true
           tags: gladiator1337/phonebook-app:latest

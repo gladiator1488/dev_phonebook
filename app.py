@@ -7,22 +7,17 @@ app = Flask(__name__)
 
 
 DB_CONFIG = {
-    # Для некритичных настроек можно оставить дефолты
     'dbname': os.getenv('POSTGRES_DB', 'phonebook'),
     'user': os.getenv('POSTGRES_USER', 'sladkiy'),
     'host': os.getenv('POSTGRES_HOST', 'localhost'),  
     'port': os.getenv('POSTGRES_PORT', '5432'),
     
-    # А вот ПАРОЛЬ мы запрашиваем жестко. 
-    # Если переменной POSTGRES_PASSWORD нет в .env файле,
-    # скрипт тут же выдаст ошибку KeyError и не запустится.
     'password': os.environ['POSTGRES_PASSWORD'] 
 }
 
 
 
 def init_db():
-    # Даем тяжелой базе данных время на запуск
     time.sleep(3) 
     with psycopg2.connect(**DB_CONFIG) as conn:
         with conn.cursor() as cur:
